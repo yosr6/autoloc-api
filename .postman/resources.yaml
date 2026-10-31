@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: d247edd8-12b0-46b4-8944-dc69299e31e7
+
+localResources:
+  collections:
+    - ../Autoloc_API_Postman_Collection.json

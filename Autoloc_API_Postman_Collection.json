@@ -1,0 +1,248 @@
+{
+  "info": {
+    "_postman_id": "autoloc-api-collection",
+    "name": "Autoloc API - ESPRIT 2026",
+    "description": "Collection Postman complète pour l'API de gestion de location automobile.\nTeste tous les endpoints CRUD pour Véhicule, Client et Agence.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8089",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "🚗 Véhicules",
+      "item": [
+        {
+          "name": "GET - Lister tous les véhicules",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vehicules"]
+            }
+          }
+        },
+        {
+          "name": "GET - Trouver un véhicule par ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vehicules", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST - Créer un véhicule",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"100 TUN 2024\",\n  \"marque\": \"Peugeot\",\n  \"modele\": \"308\",\n  \"annee\": 2023,\n  \"prixJournalier\": 85.00,\n  \"statut\": \"DISPONIBLE\",\n  \"categorie\": \"BERLINE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vehicules"]
+            }
+          }
+        },
+        {
+          "name": "PUT - Mettre à jour un véhicule",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"100 TUN 2024\",\n  \"marque\": \"Peugeot\",\n  \"modele\": \"308 GTi\",\n  \"annee\": 2023,\n  \"prixJournalier\": 95.00,\n  \"statut\": \"DISPONIBLE\",\n  \"categorie\": \"BERLINE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vehicules", "1"]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Supprimer un véhicule",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "vehicules", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "👤 Clients",
+      "item": [
+        {
+          "name": "GET - Lister tous les clients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clients",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clients"]
+            }
+          }
+        },
+        {
+          "name": "GET - Trouver un client par ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clients/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clients", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST - Créer un client",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Ali\",\n  \"prenom\": \"Mohamed\",\n  \"email\": \"mohamed.benali@email.tn\",\n  \"telephone\": \"+216 22 345 678\",\n  \"numeroPermis\": \"TN-2019-123456\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/clients",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clients"]
+            }
+          }
+        },
+        {
+          "name": "PUT - Mettre à jour un client",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Ali\",\n  \"prenom\": \"Mohamed Amine\",\n  \"email\": \"m.amine.benali@email.tn\",\n  \"telephone\": \"+216 22 345 678\",\n  \"numeroPermis\": \"TN-2019-123456\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/clients/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clients", "1"]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Supprimer un client",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clients/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clients", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🏢 Agences",
+      "item": [
+        {
+          "name": "GET - Lister toutes les agences",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agences",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agences"]
+            }
+          }
+        },
+        {
+          "name": "GET - Trouver une agence par ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agences/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agences", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST - Créer une agence",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Autoloc Tunis Centre\",\n  \"adresse\": \"12 Avenue Habib Bourguiba, Tunis 1000\",\n  \"telephone\": \"+216 71 234 567\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agences",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agences"]
+            }
+          }
+        },
+        {
+          "name": "PUT - Mettre à jour une agence",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Autoloc Tunis Centre - Siège\",\n  \"adresse\": \"12 Avenue Habib Bourguiba, Tunis 1000\",\n  \"telephone\": \"+216 71 234 567\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agences/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agences", "1"]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Supprimer une agence",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agences/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agences", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
